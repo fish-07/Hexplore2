@@ -132,7 +132,12 @@
 
   #menu-overlay { display: none; position: fixed; inset: 0; z-index: 600; }
   #menu-overlay.open { display: block; }
-  #menu-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.5); }
+  #menu-backdrop {
+    position: absolute; inset: 0;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
 
   #menu-sheet, #settings-sheet, #places-sheet {
     position: absolute; left: 0; right: 0; bottom: 0;
@@ -197,7 +202,9 @@
 
   #confirm-overlay {
     display: none; position: fixed; inset: 0; z-index: 700;
-    background: rgba(0,0,0,.65);
+    background: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     align-items: center; justify-content: center;
   }
   #confirm-overlay.open { display: flex; }
